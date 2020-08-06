@@ -11,6 +11,7 @@ stage('Build'){
 }
 stage('Test'){
     sh "sh ./nametest.sh >testlog.txt"
+    sh "dos2unix reflog.txt testlog.txt"
     sh "diff testlog.txt reflog.txt"
 }
 }
